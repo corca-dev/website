@@ -16,11 +16,8 @@
             padding: 0;
         }
         .section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 20px; /* Add some padding to sections for better spacing on small screens */
+            text-align: center;
         }
         .section1 {
             background-color: #FFFFFF; 
@@ -39,7 +36,7 @@
         h2 {
             font-weight: 300;
             font-size: 24px;
-            margin: 40px 0;
+            margin: 20px 0;
         }
         img {
             max-width: 100%;
@@ -56,13 +53,23 @@
             font-weight: bold;
         }
         .logo {
-            max-width: 400px;
+            max-width: 100%; /* Make the logo responsive */
             height: auto;
             margin-bottom: 20px;
         }
         .product-screenshot {
-            max-width: 70%;
+            max-width: 100%; /* Make the product image responsive */
             height: auto;
+        }
+
+        /* Media query for smaller screens (e.g., smartphones) */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
