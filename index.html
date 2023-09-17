@@ -16,8 +16,11 @@
             padding: 0;
         }
         .section {
-            padding: 20px; /* Add some padding to sections for better spacing on small screens */
-            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .section1 {
             background-color: #FFFFFF; 
@@ -36,7 +39,7 @@
         h2 {
             font-weight: 300;
             font-size: 24px;
-            margin: 20px 0;
+            margin: 40px 0;
         }
         img {
             max-width: 100%;
@@ -53,23 +56,13 @@
             font-weight: bold;
         }
         .logo {
-            max-width: 100%; /* Make the logo responsive */
+            max-width: 400px;
             height: auto;
             margin-bottom: 20px;
         }
         .product-screenshot {
-            max-width: 100%; /* Make the product image responsive */
+            max-width: 70%;
             height: auto;
-        }
-
-        /* Media query for smaller screens (e.g., smartphones) */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 24px;
-            }
-            h2 {
-                font-size: 20px;
-            }
         }
     </style>
 </head>
