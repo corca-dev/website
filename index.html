@@ -189,8 +189,8 @@
         }
         
             .special-text {
-        font-size: 20px; /* Adjust font size for better visibility */
-        margin-bottom: 20px; /* Adjust margin for better spacing */
+        font-size: 20px; 
+        margin-bottom: 20px;
     }
             
             img.screenshot {
@@ -198,14 +198,18 @@
         }
             
             .footer {
-    margin-top: 0; /* Remove negative margin or set it to a smaller value */
-}
+        margin-top: 0; 
+                }
             
 
             .footer-content {
-                align-items: center;
-                margin: 0 auto;/* Center align the content in the footer */
-            } 
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Center the text horizontally */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    height: 100%;
+}
             
             .footer-text {
             font-size: 16px;
@@ -216,7 +220,7 @@
             }
 
             .footer img {
-                display: none; /* Hide the logo in the footer on smaller screens */
+                display: none; 
             }
         }
     </style>
