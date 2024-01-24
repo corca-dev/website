@@ -66,35 +66,36 @@
         }
 
         .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         .button-container button,
-.button-container a {
-    font-family: 'Geist Mono', monospace;
-    font-weight: normal;
-    color: white;
-    border: none;
-    border-radius: 38px;
-    padding: 10px 35px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    white-space: nowrap;
-}
-       .button-container .black-bottom-button {
-    background-color: black;
-    font-size: 30px;
-    color: white;
-}
+        .button-container a {
+            font-family: 'Geist Mono', monospace;
+            font-weight: normal;
+            color: white;
+            border: none;
+            border-radius: 38px;
+            padding: 10px 35px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .button-container .black-bottom-button {
+            background-color: black;
+            font-size: 30px;
+            color: white;
+        }
 
         .button-container .gold-button {
-    background-color: #D1A35B;
-    font-size: 30px;
-}
+            background-color: #D1A35B;
+            font-size: 30px;
+        }
 
         .button-container .black-top-button {
             background-color: black;
@@ -103,52 +104,86 @@
         }
 
         .button-container .separator {
-    color: black;
-    font-size: 40px;
-    margin: 0 50px; /* Adjust the margin between buttons and separator */
-    vertical-align: middle; /* Align the separator vertically with the buttons */
-}
+            color: black;
+            font-size: 40px;
+            margin: 0 50px; /* Adjust the margin between buttons and separator */
+            vertical-align: middle; /* Align the separator vertically with the buttons */
+        }
 
         .footer {
-    background-color: black;
-    color: white;
-    padding: 50px;
+            background-color: black;
+            color: white;
+            padding: 50px;
+            z-index: 2;
+            margin-top: -35vh; /* Adjust the negative margin to control the overlap */
+            position: relative; /* Ensure the position is relative for z-index to work */
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
 
-    z-index: 2;
-    margin-top: -35vh; /* Adjust the negative margin to control the overlap */
-    position: relative; /* Ensure the position is relative for z-index to work */
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-      .footer-content {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.footer-text {
-    font-family: 'Geist Mono', monospace;
-    font-weight: normal;
-    font-size: 20px;
-    margin: 5px 0;
-}
-
-.email-link {
-    font-family: 'Geist Mono', monospace;
-    color: #CCCF40;
-    text-decoration: none;
-}
-        
         .footer-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end; /* Align items to the left */
-    height: 100%; /* Ensure the content takes the full height of the footer */
-}
-        
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .footer-text {
+            font-family: 'Geist Mono', monospace;
+            font-weight: normal;
+            font-size: 20px;
+            margin: 5px 0;
+        }
+
+        .email-link {
+            font-family: 'Geist Mono', monospace;
+            color: #CCCF40;
+            text-decoration: none;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end; /* Align items to the left */
+            height: 100%; /* Ensure the content takes the full height of the footer */
+        }
+
+        @media (max-width: 600px) {
+            /* Styles for screens with a maximum width of 600px (typical mobile devices) */
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .button-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .button-container .separator {
+                display: none; /* Hide the separator on smaller screens */
+            }
+
+            img.logo {
+                width: 70%; /* Adjust the logo size for smaller screens */
+                margin: 20px auto; /* Center the logo and add some space around it */
+            }
+
+            .footer {
+                flex-direction: column; /* Stack the footer content vertically */
+                text-align: center;
+            }
+
+            .footer-content {
+                align-items: center; /* Center align the content in the footer */
+            }
+
+            .footer img {
+                display: none; /* Hide the logo in the footer on smaller screens */
+            }
+        }
     </style>
 </head>
 
@@ -201,7 +236,6 @@
         <div class="footer-text">Email: <a href="mailto:hey@corca.io" class="email-link">hey@corca.io</a></div>
     </div>
 </div>
-
 
 </body>
 
