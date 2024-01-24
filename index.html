@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The only math editor</title>
+
     <!-- Add any additional meta tags, stylesheets, or scripts here -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap">
+
     <style>
         @font-face {
             font-family: 'Geist Mono';
@@ -13,64 +16,63 @@
             font-weight: normal;
             font-style: normal;
         }
-
+        
         body {
-            font-family: 'Geist Mono', monospace;
-            font-size: 20px;
+            margin: 0;
+            padding: 0;
         }
 
-        h1 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 120px;
-            text-align: center; 
-            margin-top: 130px;
-            margin-bottom: 220px;
-        }
-
-        h2 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 40px;
+        .container {
+            width: 70%;
+            margin: 150px auto;
         }
         
-        img.logo {
-            width: 275px;
-            height: 36px;
-            margin-right: auto; /* Align to the left */
-        }
-        
-        img.screenshot {
-            display: block;
-            margin: 0 auto; /* Center the image */
-            width: 85%;
-        }
-        
-        .columns-container {
-            display: flex;
-            flex-direction: column;
-            width: 85%;
-            margin: 0 auto; /* Center the container */
-        }
-
-        .columns-container section {
+        header {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
+            align-items: center;
+            padding: 20px;
+            width: 90vw;
+            margin: 0 auto;
         }
-        
-        .columns-container section div {
-            width: 30%; /* Columns take up 30% width inside the container */
+
+        p.regular-text,
+        p.special-text {
+            font-family: 'Geist Mono', monospace;
+            font-weight: normal;
+            font-size: 28px;
         }
-        
- .button-container {
+
+        p.special-text {
+            color: #ACADAE;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        p.special-text a {
+            color: #D1A35B;
+        }
+
+        img.logo {
+            width: 30%;
+            height: auto;
+        }
+
+        img.screenshot {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .button-container {
     display: flex;
     justify-content: center;
-     align-items: center;
-    margin-top: 20px;
+    align-items: center;
 }
 
-.button-container button, .button-container a {
+        .button-container button,
+.button-container a {
     font-family: 'Geist Mono', monospace;
     font-weight: normal;
     color: white;
@@ -78,150 +80,129 @@
     border-radius: 38px;
     padding: 10px 35px;
     cursor: pointer;
-    
-    width: auto;
-    text-decoration: none; /* Remove underline for anchor tags */
+    text-decoration: none;
     display: inline-block;
-    text-align: center; /* Center text within the button */
+    text-align: center;
+    white-space: nowrap;
+}
+       .button-container .black-bottom-button {
+    background-color: black;
+    font-size: 30px;
+    color: white;
 }
 
-.button-container .bottom-button {
-    background-color: black; /* Bottom button color */
+        .button-container .gold-button {
+    background-color: #D1A35B;
     font-size: 30px;
-}
-        
-        .button-container .top-button {
-    background-color: #D1A35B; /* Bottom button color */
-    font-size: 20px;
 }
 
-.button-container a.bottom-button {
-    background-color: black; /* Top button color */
-    font-size: 30px;
-    color: white; /* Set text color to purple */
-}
-        
+        .button-container .black-top-button {
+            background-color: black;
+            font-size: 20px;
+            color: white;
+        }
+
         .button-container .separator {
     color: black;
     font-size: 40px;
-    margin: 0 50px; /* Adjust the margin to control spacing around the "+" */
+    margin: 0 50px; /* Adjust the margin between buttons and separator */
+    vertical-align: middle; /* Align the separator vertically with the buttons */
 }
 
-        
-.footer {
+        .footer {
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 50px;
+
+    z-index: 2;
+    margin-top: -35vh; /* Adjust the negative margin to control the overlap */
+    position: relative; /* Ensure the position is relative for z-index to work */
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align items at the top */
-    margin-top: 200px; /* Add spacing between buttons and footer */
-    height: 452px; /* Set footer height */
+    align-items: flex-start;
 }
-        
-        .footer .footer-logo {
-    margin-top: 20px;
-    margin-left: 7.5%;
-}
-        
-        .footer .footer-content {
+
+      .footer-content {
     display: flex;
-    justify-content: space-between;
-    padding: 0 7.5%;
+    flex-direction: column;
     text-align: left;
 }
 
-        
-       .footer-text {
-            font-family: 'Geist Mono', monospace;
-            font-weight: normal;
-           
-            font-size: 20px;
-            margin: 0; /* Remove default margin */
-        }
+.footer-text {
+    font-family: 'Geist Mono', monospace;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 5px 0;
+}
 
-        .email-link {
-            font-family: 'Geist Mono', monospace;
-            color: #CCCF40; /* Email link color */
-            text-decoration: none;
-        }
+.email-link {
+    font-family: 'Geist Mono', monospace;
+    color: #CCCF40;
+    text-decoration: none;
+}
         
+        .footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end; /* Align items to the left */
+    height: 100%; /* Ensure the content takes the full height of the footer */
+}
         
     </style>
 </head>
+
 <body>
 
     <!-- Header Section -->
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
-        <div>
-            <img class="logo"  src="https://github.com/corca-dev/website/blob/main/images/corca_logo.png?raw=true" alt="Corca Logo">
+    <header>
+        <div style="align-self: center;">
+            <img class="logo" src="https://github.com/corca-dev/website/blob/8cd46474c3b574f162db7ac0bcfa080a6dd9ec73/images/Group%20307.png?raw=true" alt="Corca Logo" style="height: 100%;">
         </div>
-        <div class="button-container">
-        <button  class="top-button">Join the Waitlist</button>
-    </div>
+        <div class="button-container" style="align-self: center;">
+            <a href="https://forms.gle/eusA2wrWPR6ZAcAe9" target="_blank" class="black-top-button">Join the Waitlist</a>
+        </div>
     </header>
 
-    <!-- "Do Math Together" Header -->
-    <h1>Do math together.</h1>
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Main Paragraph -->
+        <p class="regular-text">It’s hard to imagine, but in 2024, we still do math on paper 🤯. Tools like Wolfram, Matlab, and Python are good for calculations, but if you're proving a theorem or seeking the equation of everything, you're left with paper. We can do something in LaTeX but it’s not designed for actual work.</p>
 
-    <!-- Large Product Screenshot -->
-    <img class="screenshot" src="https://github.com/corca-dev/website/blob/2cec57b23b112343f67a23f40a98b45105300513/images/Frame_1.png?raw=true" alt="Product Screenshot" width="70%" >
+        <p class="regular-text">
+            Furthermore, there is no online collaboration tool for math. We can’t work together in real-time on a math problem like we used to in modern tools like Notion, Figma, or Google Docs.</p>
 
-    <!-- 3 Columns Section 1 -->
-    <div class="columns-container">
-    <section>
-        <div>
-            <h2>Drag and drop manipulations.</h2>
-            <p>Just grab anything in your equation and act. Whether you're factoring out of parentheses, rearranging terms, or combining expressions. Corca will do the rest and won't mess up the signs.</p>
-        </div>
-        <div>
-            <h2>Fastest math editor.</h2>
-            <p>LaTeX? Forget about it. Just type what you need and we handle the rest. And it’s not just a text, semantic math is here.</p>
-        </div>
-        <div>
-            <h2>Custom notations.</h2>
-            <p>Tailor your workspace by introducing personalized notations. Corca understands and adapts to your syntax, making complex calculations as simple as writing them down.</p>
-        </div>
-    </section>
-    </div>
+        <p class="regular-text" style="margin-bottom: 80px";>
+            Corca Research's goal is to replace paper and make the fastest and easiest collaborative tool for math. In which you can define your own rules and notations, manipulate equations using drag and drop or hot keys, and easily export it to LaTeX or Python. We're committed to open-sourcing the format, rules, notations, etc.</p>
 
-    <!-- 3 Columns Section 2 -->
-   <div class="columns-container">
-    <section>
-        <div>
-            <h2>Define your own rules.</h2>
-            <p>Flexibility is at your fingertips. Define and implement your own set of mathematical rules. Corca intelligently applies your customizations for a truly individualized approach to problem-solving.</p>
+        <!-- "Join the Waitlist" and "Follow on X" Buttons -->
+        <div class="button-container">
+            <a href="https://forms.gle/eusA2wrWPR6ZAcAe9" target="_blank" class="black-bottom-button">Join the Waitlist</a>
+            <span class="separator">+</span>
+            <a href="https://twitter.com/Corca_math" target="_blank" class="gold-button">
+        Follow on <img src="https://github.com/corca-dev/website/blob/main/images/Social%20-%20Twitter.png?raw=true" alt="Twitter Logo" style="vertical-align: middle; margin-left: -5px;">
+    </a>
         </div>
-        <div>
-            <h2>Export to LaTeX, Python, Wolfram</h2>
-            <p>Corca will turns your on-screen work into ready-to-publish material or generate a Python code for your equation.</p>
-        </div>
-        <div>
-            <h2>AI Co-pilot</h2>
-            <p>If you don’t understand something AI Co-pilot will break down complex theories ensuring you understand it. Will help with new ideas when you stuck. Connecting different areas of knowledge, suggesting how principles from one area can be applied to another.</p>
-        </div>
-      </section>
-    </div>
 
-    <!-- "Join the Waitlist" and "Follow on X" Buttons -->
-  <div class="button-container">
-    <button class="bottom-button">Join the Waitlist</button>
-    <span class="separator">+</span>
-    <a href="https://twitter.com/Corca_math" target="_blank" class="bottom-button">Follow on Twitter</a>
-</div>
+        <p class="special-text">
+            We’re looking for people who are willing to make this happen: mathematicians, developers, designers, etc. <a href="mailto:hey@corca.io" class="email-link">Shoot us a message.</a></p>
+
+        <!-- Large Product Screenshot -->
+        <img class="screenshot" src="https://github.com/corca-dev/website/blob/2cec57b23b112343f67a23f40a98b45105300513/images/Frame_1.png?raw=true" alt="Product Screenshot" width="70%">
+    </div> <!-- End of Main Content Container -->
 
     <!-- Black Footer -->
-<div class="footer">
+   <div class="footer">
     <div style="margin-top: 20px; margin-left: 7.5%;">
         <img src="https://github.com/corca-dev/website/blob/main/images/logo_vertical.png?raw=true" alt="Footer Logo" width="47.5" height="117">
     </div>
-   <div style="text-align: left;">
-            <p class="footer-text">&copy; 2024 Corca Research Inc</p>
-        </div>
-        <div style="text-align: right;">
-            <p class="footer-text">Email: <a href="mailto:hey@corca.io" class="email-link">hey@corca.io</a></p>
-        </div>
+    <div class="footer-content">
+        <div class="footer-text">&copy; 2024 Corca Research Inc</div>
+        <div class="footer-text">Email: <a href="mailto:hey@corca.io" class="email-link">hey@corca.io</a></div>
+    </div>
 </div>
 
+
 </body>
+
 </html>
