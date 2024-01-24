@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The only math editor</title>
+    <!-- Add any additional meta tags, stylesheets, or scripts here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap">
+    <style>
+        @font-face {
+            font-family: 'Geist Mono';
+            src: url('https://github.com/corca-dev/website/blob/f5f6fa7d0c57c801ec02ea6c7b3f2eaa88192a72/GeistMono-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Geist Mono', monospace;
+            font-size: 20px;
+            width: 75%;
+            margin: 0 auto;
+        }
+        
+        img.logo {
+            width: 275px;
+            height: 36px;
+            margin-right: auto; /* Align to the left */
+        }
+        
+        img.screenshot {
+            display: block;
+            margin: 0 auto; /* Center the image */
+            width: 85%;
+        }
+        
+        
+ .button-container {
+    display: flex;
+    justify-content: center;
+     align-items: center;
+    margin-top: 20px;
+}
+
+.button-container button, .button-container a {
+    font-family: 'Geist Mono', monospace;
+    font-weight: normal;
+    color: white;
+    border: none;
+    border-radius: 38px;
+    padding: 10px 35px;
+    cursor: pointer;
+    
+    width: auto;
+    text-decoration: none; /* Remove underline for anchor tags */
+    display: inline-block;
+    text-align: center; /* Center text within the button */
+}
+
+.button-container .bottom-button {
+    background-color: black; /* Bottom button color */
+    font-size: 30px;
+}
+        
+        .button-container .top-button {
+    background-color: #D1A35B; /* Bottom button color */
+    font-size: 20px;
+}
+
+.button-container a.bottom-button {
+    background-color: black; /* Top button color */
+    font-size: 30px;
+    color: white; /* Set text color to purple */
+}
+        
+        .button-container .separator {
+    color: black;
+    font-size: 40px;
+    margin: 0 50px; /* Adjust the margin to control spacing around the "+" */
+}
+
+        
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the top */
+    margin-top: 200px; /* Add spacing between buttons and footer */
+    height: 452px; /* Set footer height */
+}
+        
+        .footer .footer-logo {
+    margin-top: 20px;
+    margin-left: 7.5%;
+}
+        
+        .footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7.5%;
+    text-align: left;
+}
+
+        
+       .footer-text {
+            font-family: 'Geist Mono', monospace;
+            font-weight: normal;
+           
+            font-size: 20px;
+            margin: 0; /* Remove default margin */
+        }
+
+        .email-link {
+            font-family: 'Geist Mono', monospace;
+            color: #CCCF40; /* Email link color */
+            text-decoration: none;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+        <div>
+            <img class="logo"  src="https://github.com/corca-dev/website/blob/main/images/corca_logo.png?raw=true" alt="Corca Logo">
+        </div>
+        <div class="button-container">
+        <button  class="top-button">Join the Waitlist</button>
+    </div>
+    </header>
+
+    <!-- main paragraph -->
+    <body>
+    <p>It’s hard to imagine, but in 2024, we still do math on paper 🤯. Tools like Wolfram, Matlab, and Python are good for calculations, but if you're proving a theorem or seeking the equation of everything, you're left with paper. We can do something in LaTeX but it’s not designed for actual work.</p>
+
+<p>
+    Furthermore, there is no online collaboration tool for math. We can’t work together in real-time on a math problem like we used to in modern tools like Notion, Figma, or Google Docs.</p>
+
+<p>
+    Corca Research's goal is to replace paper and make the fastest and easiest collaborative tool for math. In which you can define your own rules and notations, manipulate equations using drag and drop or hot keys, and easily export it to LaTeX or Python. We're committed to open-sourcing the format, rules, notations, etc.</p>
+</body>
+
+
+ 
+
+    <!-- "Join the Waitlist" and "Follow on X" Buttons -->
+  <div class="button-container">
+    <button class="bottom-button">Join the Waitlist</button>
+    <span class="separator">+</span>
+    <a href="https://twitter.com/Corca_math" target="_blank" class="bottom-button">Follow on Twitter</a>
+</div>
+    
+       <!-- Large Product Screenshot -->
+    <img class="screenshot" src="https://github.com/corca-dev/website/blob/2cec57b23b112343f67a23f40a98b45105300513/images/Frame_1.png?raw=true" alt="Product Screenshot" width="70%" >
+
+
+    
+
+    <!-- Black Footer -->
+<div class="footer">
+    <div style="margin-top: 20px; margin-left: 7.5%;">
+        <img src="https://github.com/corca-dev/website/blob/main/images/logo_vertical.png?raw=true" alt="Footer Logo" width="47.5" height="117">
+    </div>
+   <div style="text-align: left;">
+            <p class="footer-text">&copy; 2024 Corca Research Inc</p>
+        </div>
+        <div style="text-align: right;">
+            <p class="footer-text">Email: <a href="mailto:hey@corca.io" class="email-link">hey@corca.io</a></p>
+        </div>
+</div>
+
+</body>
+</html>
