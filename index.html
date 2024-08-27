@@ -1,277 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The only math editor</title>
-
-    <!-- Add any additional meta tags, stylesheets, or scripts here -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap">
-
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="48x48" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        @font-face {
-            font-family: 'Geist Mono';
-            src: url('https://github.com/corca-dev/website/blob/f5f6fa7d0c57c801ec02ea6c7b3f2eaa88192a72/GeistMono-Regular.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        body {
-            margin: 0;
-            padding: 0;
-        }
+      @font-face {
+        font-family: 'Geist Mono';
+        src: url('https://github.com/corca-dev/website/blob/f5f6fa7d0c57c801ec02ea6c7b3f2eaa88192a72/GeistMono-Regular.woff2')
+          format('woff2');
 
-        .container {
-            width: 70%;
-            margin: 150px auto;
-        }
-        
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px;
-            width: 90vw;
-            margin: 0 auto;
-        }
+        font-weight: normal;
+        font-style: normal;
+      }
 
-        p.regular-text,
-        p.special-text {
-            font-family: 'Geist Mono', monospace;
-            font-weight: normal;
-            font-size: 28px;
-        }
+      html {
+        font-size: 10px;
+        -webkit-font-smoothing: antialiased;
+      }
 
-        p.special-text {
-            color: #ACADAE;
-            margin-top: 80px;
-            margin-bottom: 80px;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
 
-        p.special-text a {
-            color: #D1A35B;
-        }
+      div.body {
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 20px;
+      }
 
-        img.logo {
-            width: 275px;
-            height: auto;
-        }
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+      }
 
-        img.screenshot {
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            z-index: 1;
-        }
+      .headerRight {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      .logo {
+        font-family: Inter;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.36px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
 
-        .button-container button,
-        .button-container a {
-            font-family: 'Geist Mono', monospace;
-            font-weight: normal;
-            color: white;
-            border: none;
-            border-radius: 38px;
-            padding: 10px 35px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            white-space: nowrap;
-        }
+      .waitlist {
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #dbeafe;
+        color: #3b82f6;
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: -0.36px;
+      }
 
-        .button-container .black-bottom-button {
-            background-color: black;
-            font-size: 30px;
-            color: white;
-        }
+      div.about {
+        font-family: 'Geist Mono', monospace;
+        font-weight: normal;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.8px;
+        padding-bottom: 10px;
+      }
+      div.about p {
+        margin-bottom: 2rem;
+      }
 
-        .button-container .gold-button {
-            background-color: #D1A35B;
-            font-size: 30px;
-        }
+      div.contact {
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.8px;
+        max-width: 493px;
+        padding: 30px 0 38px 0;
+      }
+      div.contact:before {
+        content: '';
+        display: block;
+        width: 335px;
+        border-top: 1px solid #e4e4e7;
+        transform: translateY(-30px);
+      }
 
-        .button-container .black-top-button {
-            background-color: black;
-            font-size: 20px;
-            color: white;
-        }
+      h1 {
+        font-size: 8rem;
+        font-weight: 500;
+        letter-spacing: -0.8px;
+        line-height: 90%;
+        margin: 0 0 42px 0;
+        padding: 0;
+      }
 
-        .button-container .separator {
-            color: black;
-            font-size: 40px;
-            margin: 0 30px; /* Adjust the margin between buttons and separator */
-            vertical-align: middle; /* Align the separator vertically with the buttons */
-        }
+      h2 {
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 90%;
+        letter-spacing: -0.8px;
+        margin: 0 0 10px 0;
+        padding: 0;
+      }
 
-        .footer {
-            background-color: black;
-            color: white;
-            padding: 50px;
-            z-index: 2;
-            margin-top: -35vh; /* Adjust the negative margin to control the overlap */
-            position: relative; /* Ensure the position is relative for z-index to work */
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
+      a {
+        color: #3b82f6;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            justify-content: flex-end;
-            align-items: flex-end; /* Align items to the left */
-            height: 100%; /* Ensure the content takes the full height of the footer */
-        }
+      p {
+        margin: 0;
+        padding: 0;
+      }
 
-        .footer-text {
-            font-family: 'Geist Mono', monospace;
-            font-weight: normal;
-            font-size: 20px;
-            margin: 5px 0;
-        }
+      ul {
+        margin: 0;
+        padding: 0;
+        display: inline-flex;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        width: 200px;
+        height: 100px;
+        flex-shrink: 0;
+      }
 
-        .email-link {
-            font-family: 'Geist Mono', monospace;
-            color: #CCCF40;
-            text-decoration: none;
-        }
+      .layout {
+        display: flex;
+        gap: 62px;
+      }
 
-        @media (max-width: 600px) {
-            /* Styles for screens with a maximum width of 600px (typical mobile devices) */
-            
-            .button-container .black-top-button {
-                display: none }
-            
-             header {
-        text-align: center;
-                 justify-content: space-between;
-                 width: 90vw;}
-            
-            
-             img.logo {
-            padding: 30px;
-            width: 80%;
-            height: auto;
-            margin: 0 auto;
-        }
-            
-            .container {
-            width: 80%;
-            margin: 30px auto;
-        }
-        
-            p.regular-text,
-        p.special-text {
-            font-family: 'Geist Mono', monospace;
-            font-weight: normal;
-            font-size: 18px;
-        }
-            
-            .button-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .button-container .black-bottom-button {
-            font-size: 20px;
-        }
+      aside {
+        width: 420px;
+        flex-shrink: 0;
+      }
 
-        .button-container .gold-button {
-            font-size: 20px;
-        }
-        
-            .special-text {
-        font-size: 20px; 
-        margin-bottom: 20px;
-    }
-            
-            img.screenshot {
-            display: none;
-        }
-            
-            .footer {
-        margin-top: 0; 
-                }
-            
+      footer {
+        font-family: Inter;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -1px;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 0;
+        border-top: 1px solid #e4e4e7;
+      }
 
-            .footer-content {
-                align-items: center;
-                margin: 0 auto;
-            } 
-            
-            .footer-text {
-            font-size: 16px;
+      @media (max-width: 950px) {
+        .layout {
+          display: block;
         }
-            
-            .email-link {
-                font-size: 16px;
-            }
-
-            .footer img {
-                display: none; 
-            }
+        aside {
+          width: 100%;
+          margin-bottom: 30px;
         }
+      }
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 6rem;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
-    <!-- Header Section -->
+  <body>
     <header>
-        <div style="align-self: center;">
-            <img class="logo" src="https://github.com/corca-dev/website/blob/8cd46474c3b574f162db7ac0bcfa080a6dd9ec73/images/Group%20307.png?raw=true" alt="Corca Logo" style="height: 100%;">
-        </div>
-        <div class="button-container" style="align-self: center;">
-            <a href="https://forms.gle/eusA2wrWPR6ZAcAe9" target="_blank" class="black-top-button">Join the Waitlist</a>
-        </div>
+      <div class="logo">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 42 42"
+          fill="none"
+        >
+          <path
+            d="M41 21C41 32.0457 32.0457 41 21 41C9.9543 41 1 32.0457 1 21C1 9.9543 9.9543 1 21 1C32.0457 1 41 9.9543 41 21Z"
+            stroke="black"
+            stroke-width="2"
+          />
+          <path d="M8 21H34M21 34V8" stroke="black" stroke-width="2" stroke-linecap="round" />
+          <path
+            d="M11.8076 30.1934L17 25.001M30.1924 11.8086L25 17.001M30.1924 30.1934L25 25.001M11.8076 11.8086L17 17.001"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        Corca
+      </div>
+
+      <div class="headerRight">
+        <a href="https://twitter.com/corca_math" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M19 19.5H14.5479L10.4155 13.6096L5.23288 19.5H4L9.84475 12.8333L4 4.5H8.36073L12.2877 10.0936L17.1963 4.5H18.4749L12.8584 10.8927L19 19.5ZM17.1279 18.5411L7.83562 5.4589H5.82648L15.0959 18.5411H17.1279Z"
+              fill="black"
+            />
+          </svg>
+        </a>
+        <a href="https://forms.gle/eusA2wrWPR6ZAcAe9" target="_blank" class="waitlist"
+          >Join the Waitlist</a
+        >
+      </div>
     </header>
 
-    <!-- Main Content Container -->
-    <div class="container">
-        <!-- Main Paragraph -->
-        <p class="regular-text">It’s hard to imagine, but in 2024, we still do math on paper 🤯. Tools like Wolfram, Matlab, and Python are good for calculations, but if you're proving a theorem or seeking the equation of everything, you're left with paper. We can do something in LaTeX but it’s not designed for actual work.</p>
+    <div class="body">
+      <h1>Collaborative<br />Math Editor</h1>
+      <div class="layout">
+        <div class="about">
+          <p>
+            It’s hard to&nbsp;imagine, but in&nbsp;2024, we&nbsp;still do&nbsp;math
+            on&nbsp;paper&nbsp;🤯. Tools like Wolfram, Matlab, and Python are good for calculations,
+            but if&nbsp;you’re proving a&nbsp;theorem or&nbsp;seeking the equation
+            of&nbsp;everything, you’re left with paper. We&nbsp;can do&nbsp;something in&nbsp;LaTeX
+            but it’s not designed for actual work.
+          </p>
 
-        <p class="regular-text">
-            Furthermore, there is no online collaboration tool for math. We can’t work together in real-time on a math problem like we used to in modern tools like Notion, Figma, or Google Docs.</p>
+          <p>
+            Furthermore, there is no&nbsp;online collaboration tool for math. We&nbsp;can’t work
+            together in&nbsp;real-time on&nbsp;a&nbsp;math problem like we&nbsp;used
+            to&nbsp;in&nbsp;modern tools like Notion, Figma or&nbsp;Google Docs.
+          </p>
 
-        <p class="regular-text" style="margin-bottom: 80px";>
-            Corca Research's goal is to replace paper and make the fastest and easiest collaborative tool for math. In which you can define your own rules and notations, manipulate equations using drag and drop or hot keys, and easily export it to LaTeX or Python. We're committed to open-sourcing the format, rules, notations, etc.</p>
-
-        <!-- "Join the Waitlist" and "Follow on X" Buttons -->
-        <div class="button-container">
-            <a href="https://forms.gle/eusA2wrWPR6ZAcAe9" target="_blank" class="black-bottom-button">Join the Waitlist</a>
-            <span class="separator">+</span>
-            <a href="https://twitter.com/Corca_math" target="_blank" class="gold-button">
-        Follow on <img src="https://raw.githubusercontent.com/corca-dev/website/0b2232ca54ee0d0133454d3160e62ab36eed4771/images/%F0%9D%95%8F.svg" alt="Twitter Logo" style="vertical-align: middle; margin-left: -5px;">
-    </a>
+          <p>
+            Corca Research goal is&nbsp;to&nbsp;replace paper and make the fastest and easiest
+            collaborative tool for math. In&nbsp;which you can define your own rules and notations,
+            manipulate equations using drag and drop or hot keys and easily export it&nbsp;to LaTeX
+            or&nbsp;Python. We’re committed to&nbsp;open-sourcing the format, rules, notations etc.
+          </p>
         </div>
 
-        <p class="special-text">
-            We’re looking for people who are willing to make this happen: mathematicians, developers, designers, etc. <a href="mailto:hey@corca.io" class="email-link">Shoot us a message.</a></p>
+        <aside>
+          <h2>Backed by</h2>
+          <ul>
+            <li>
+              <a href="https://www.bloombergbeta.com/" target="_blank"
+                ><img src="images/Bloomberg-Beta.png" width="200" height="100" alt="Bloomberg Beta"
+              /></a>
+            </li>
+            <li>
+              <a href="https://slow.co/" target="_blank">
+                <img src="images/Slow-Ventures.png" width="200" height="100" alt="Slow Ventures" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.liquid2.vc/" target="_blank">
+                <img src="images/Liquid-2.png" width="200" height="100" alt="Liquid 2" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.path.vc/" target="_blank">
+                <img src="images/Path.png" width="200" height="100" alt="Path Ventures" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.manaventures.vc/" target="_blank">
+                <img src="images/Mana-Ventures.png" width="200" height="100" alt="Mana Ventures" />
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
 
-        <!-- Large Product Screenshot -->
-        <img class="screenshot" src="https://github.com/corca-dev/website/blob/2cec57b23b112343f67a23f40a98b45105300513/images/Frame_1.png?raw=true" alt="Product Screenshot" width="70%">
-    </div> <!-- End of Main Content Container -->
+      <div class="contact">
+        <p>
+          We’re looking for people who are willing to make this happen: mathematicians, developers,
+          designers, etc. <a href="mailto:hey@corca.io">Shoot us a message.</a>
+        </p>
+      </div>
 
-    <!-- Black Footer -->
-   <div class="footer">
-    <div style="margin-top: 20px; margin-left: 7.5%;">
-        <img src="https://github.com/corca-dev/website/blob/main/images/logo_vertical.png?raw=true" alt="Footer Logo" width="47.5" height="117">
+      <footer>
+        <div>&copy; 2024 Corca Research, Inc</div>
+        <div>
+          <a href="mailto:hey@corca.io">hey@corca.io</a>
+        </div>
+      </footer>
     </div>
-    <div class="footer-content">
-        <div class="footer-text">&copy; 2024 Corca Research Inc</div>
-        <div class="footer-text"> <a href="mailto:hey@corca.io" class="email-link">hey@corca.io</a></div>
-    </div>
-</div>
-
-</body>
-
+  </body>
 </html>
