@@ -110,7 +110,7 @@
         font-weight: 500;
         letter-spacing: -0.8px;
         line-height: 90%;
-        margin: 0 0 42px 0;
+        margin: 60px 0 42px 0;
         padding: 0;
       }
 
@@ -178,6 +178,10 @@
         border-top: 1px solid #e4e4e7;
       }
 
+      .smallFooter {
+        display: none;
+      }
+
       @media (max-width: 950px) {
         .layout {
           display: block;
@@ -190,6 +194,21 @@
       @media (max-width: 600px) {
         h1 {
           font-size: 6rem;
+        }
+        .headerRight {
+          gap: 10px;
+        }
+        .twitter {
+          display: none;
+        }
+      }
+
+      @media (max-width: 400px) {
+        h1 {
+          font-size: 5rem;
+        }
+        footer {
+          display: block;
         }
       }
     </style>
@@ -222,7 +241,7 @@
       </div>
 
       <div class="headerRight">
-        <a href="https://twitter.com/corca_math" target="_blank">
+        <a href="https://x.com/corca_math" target="_blank" class="twitter">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
